@@ -9,6 +9,9 @@ public class Tablet extends Electronics {
     UUID idTablet;
     public Tablet(UUID idTablet){this.idTablet = idTablet;}
     int CPU;
+    //todo почему строку так создаешь?
+    // расскажешь чем отличается String cpu1 = "a"; от String cpu1 = new String ("a");
+    // не смущает что серым подкрашено?))
     String cpu1 = new String(" производительный GeForce RTX 3050");
     String cpu2 = new String(" обычный");
     String xy = new String(" 8к");
@@ -18,6 +21,7 @@ public class Tablet extends Electronics {
                 "Если вы хотите обычный видеопроцессор, нажмите 1, если производительный, нажмите 2");
     }
     public void startUpdate(){
+        // todo а тут тебе сама среда разработки говорит что у тебя код почти дублирется с кодом в таком же методе.
         Scanner amountTablet = new Scanner(System.in);
         Integer amountTablet1 = amountTablet.nextInt();
         countTablet = amountTablet1;

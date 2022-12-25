@@ -8,6 +8,10 @@ public class Phone extends Electronics{
     int countPhone;
     UUID idPhone;
     public Phone(UUID idPhone){this.idPhone = idPhone;};
+
+
+    //todo логика МЕНЮ одна должна быть. выноси ее в main. А если у тебя будет 100тысяч товаров? в каждом классе будешь это писать? это уже дублирование кода
+    // аналогично в смартфоне и планшете
     public void startRead() {
         System.out.println("Введите последовательно: \n Сколько вы желаете приобрести телефонов? \n" +
                 "Если хотите тип sim-карты micro-SIM, то нажмите 1, если обычную, то 2");
