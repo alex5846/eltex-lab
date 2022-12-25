@@ -15,14 +15,19 @@ public class Main {
 
         phone.startRead();
         phone.startUpdate();
+
             tablet.startRead();
             tablet.startUpdate();
+
                 smartphone.startRead();
                 smartphone.startUpdate();
+
+        phone.startCreate();
+        phone.startDelete();
+            tablet.startCreate();
+            tablet.startDelete();
                 smartphone.startCreate();
-
-
-
+                smartphone.startDelete();
 
 
     }

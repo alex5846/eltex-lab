@@ -34,12 +34,18 @@ public class Smartphone extends Electronics {
         if (counterSmartphone >0) {
             if (typSim == 1) {
                 System.out.println("Выбран тип sim-карты micro-SIM");
-            } else {
+            }
+            else {
                 System.out.println("Выбран тип sim-карты обычная-SIM");
             }
             System.out.println("Количество sim-карт "+counterSim);
             System.out.println("Идентификатор смартфона "+id);
         }
 
-    };
+    }
+
+
+    public void startDelete() {
+        counterSmartphone =0;
+    }
 }
