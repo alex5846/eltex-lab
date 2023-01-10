@@ -1,35 +1,44 @@
 package com.puzikov.lab1;
 
 
- abstract public class Electronics implements ICrudAction{
+import java.util.Random;
+import java.util.UUID;
 
-    //todo целесообразность клсса Electronics ? в твоей реализации он ничего не делает. (Сделано)
-    // С таким же успехом можно было просто сделать реализацию интерфейса ICrudAction в телефоне, смотрфоне и тд...
-    // + класс Electronics должен быть абстрактным, а у тебя это просто класс.
-    // необходимо вынести общие поля в абстрактный класс. Такие как имя, цена, кол-во товара, id и тд. (смысл тогда делать наследование, если ты ничего не наследуешь?...)
+abstract public class Electronics implements ICrudAction {
 
+    private UUID id;//id товара
+    public String name; //имя
+    public int price; // цена
+    protected String firm; // фирма
+    protected String model; // модель
+    protected String os; // операционная система
 
-    //todo не смущает что среда разработки тебе точки с запятой окрашивает в серый?
-    // они тут везде лизшние. Разберись где они ставятся,а где нет. Спойлер - после фигурных скобок не ставятся.
+    public static int counterObject; // Считчик сколько было заказано товаров
 
-    public void startCreate(){
-    };                                                              // заполнение объекта случайными значениями и инкремент счётчика
-    public void startRead(){
+    public void create() {
+        Random random = new Random();
+        RandValue randValue = new RandValue();
 
-    };                                                               // вывод данных на экран
-    public void startUpdate(){
+        this.id = UUID.randomUUID();
+        this.name = randValue.getRandomNamePhone();
+        this.price = random.nextInt(1000);
+        this.firm = randValue.getRandomFirm();
+        this.model = randValue.getRandomModel();
+        this.os = randValue.getRandomOS();
 
-    };                                                                // ввод данных с клавиатуры
-    public void startDelete(){
+    }                                                              // заполнение объекта случайными значениями и инкремент счётчика
 
-    };                                                                // принудительное зануление данных в объекте и декремент счетчика
+    public void read() {
 
-};
-//    String id;
-//    String name;
-//    String price;
-//    String counter;
-//    String firma;
-//    String type;
-//    String os;
+    }                                                               // вывод данных на экран
+
+    public void update() {
+
+    }                                                                // ввод данных с клавиатуры
+
+    public void delete() {
+
+    }                                                                // принудительное зануление данных в объекте и декремент счетчика
+
+}
 
