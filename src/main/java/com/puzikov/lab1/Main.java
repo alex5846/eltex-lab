@@ -1,5 +1,6 @@
 package com.puzikov.lab1;
 
+import java.util.Scanner;
 import java.util.UUID;
 
 //todo общие замечания:
@@ -22,7 +23,56 @@ import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
+        int i;
+        for (i=1;i>0;i++){
+        System.out.println("Введите цифру, соответствующую интересующему товару: \n 1 - планшет \n 2 - смартфон \n 3 - телефон");
+        Scanner t = new Scanner(System.in);
+        int tovar = t.nextInt();
+        switch (tovar) {
+            case 1:
+                UUID idTablet = UUID.randomUUID();
+                Tablet tablet = new Tablet(idTablet);
+                tablet.startRead();
+                tablet.startUpdate();
 
+
+
+                break;
+            case 2:
+                UUID id = UUID.randomUUID();
+                Smartphone smartphone = new Smartphone(id);
+                smartphone.startRead();
+                smartphone.startUpdate();
+                smartphone.startCreate();
+                smartphone.startDelete();
+                break;
+            case 3:
+                UUID idPhone = UUID.randomUUID();
+                Phone phone = new Phone(idPhone);
+                phone.startRead();
+                phone.startUpdate();
+                phone.startCreate();
+                phone.startDelete();
+                break;
+
+        }
+            System.out.println("Если желаете дальще продолжить выбор товара, то нажмите 1, если нет, то 2");
+        Scanner f = new Scanner(System.in);
+        int r = f.nextInt();
+        switch (r){
+            case 1 :
+                break;
+            case 2 :
+
+        }
+
+
+
+    }
+        tablet.startCreate();
+        tablet.startDelete();
+}}
+/*
         //todo а если я не хочу покупать смартфон? а ты уже создал объект и присвоил ему id
         UUID id = UUID.randomUUID();
         Smartphone smartphone = new Smartphone(id);
@@ -54,6 +104,8 @@ public class Main {
         smartphone.startDelete();
 
 
+
+
     }
 //    public void startUpdate() {
 //        System.out.println("Введите количество вводимых объектов, числовым значением");
@@ -63,4 +115,4 @@ public class Main {
 //    };
 
 }
-
+*/

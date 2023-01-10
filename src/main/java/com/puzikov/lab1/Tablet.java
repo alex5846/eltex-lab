@@ -12,9 +12,9 @@ public class Tablet extends Electronics {
     //todo почему строку так создаешь?
     // расскажешь чем отличается String cpu1 = "a"; от String cpu1 = new String ("a");
     // не смущает что серым подкрашено?))
-    String cpu1 = new String(" производительный GeForce RTX 3050");
-    String cpu2 = new String(" обычный");
-    String xy = new String(" 8к");
+    String cpu1 = " производительный GeForce RTX 3050";
+    String cpu2 = " обычный";
+    String xy = " 8к";
 
     public void startRead() {
         System.out.println("Введите последовательно: \n Сколько вы желаете приобрести планшетов? \n " +
@@ -27,8 +27,7 @@ public class Tablet extends Electronics {
         countTablet = amountTablet1;
         if (amountTablet1 > 0) {
             Scanner typeVideoprocessor = new Scanner(System.in);
-            Integer typeVideoprocessor1 = typeVideoprocessor.nextInt();
-            CPU = typeVideoprocessor1;
+            CPU = typeVideoprocessor.nextInt();
         }
     }
     public void startDelete() {
