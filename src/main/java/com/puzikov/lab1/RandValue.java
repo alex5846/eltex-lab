@@ -9,16 +9,28 @@ public class RandValue {
     private final String[] MODEL = {"2020 года", "2007 года", "2022 года"};
     private final String[] OS = {"Android", "IOS"};
     private final String[] TYPE_OF_SHELL = {"классический", "раскладушка"};
-    private final String[] TYPE_OF_SIM = {"mini-sim","micro-sim","nano-sim"};
-    private final String[] AMOUNT_OF_SIM = {"1 sim", "2 sim"};
+    private final String[] TYPE_OF_SIM = {"mini-sim", "micro-sim", "nano-sim"}; // тип симкарт
+    private final String[] AMOUNT_OF_SIM = {"1 sim", "2 sim"};  // колчиество симкарт
+    private final String[] SCREEN_RESOLUTION = {"5 дюймов", "7 дюймов", "10 дюймов"}; //диагональ
+    private final String[] VIDEO_PROCESSOR = {"дискретный видеопроцессор", "встроенный видеопроцессор", "гибридный видеопроцессор"};
 
     Random random = new Random();
-    public String getRandomTypeOfSim(){
+    public String getScreenResolution(){
+        return SCREEN_RESOLUTION[random.nextInt(SCREEN_RESOLUTION.length)];
+
+    }
+    public String getVideoProcessor(){
+
+        return VIDEO_PROCESSOR[random.nextInt(VIDEO_PROCESSOR.length)];
+    }
+
+    public String getRandomTypeOfSim() {
         return TYPE_OF_SIM[random.nextInt(TYPE_OF_SIM.length)];
     }
-public String getRandomAmountOfSim(){
+
+    public String getRandomAmountOfSim() {
         return AMOUNT_OF_SIM[random.nextInt(AMOUNT_OF_SIM.length)];
-}
+    }
 
     public String getRandomTypeOfShell() {
         return TYPE_OF_SHELL[random.nextInt(TYPE_OF_SHELL.length)];

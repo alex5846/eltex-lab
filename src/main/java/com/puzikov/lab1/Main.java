@@ -47,6 +47,15 @@ public class Main {
                 smartphone[i].create();
             }
         }
+        if (choice == 3){
+            System.out.println("Введите желаемое количество товара");
+            int count = scanner.nextInt();
+            Tablet[] tablet = new Tablet[count];
+            for (int i = 0;i<count;i++){
+                tablet[i] = new Tablet();
+                tablet[i].create();
+            }
+        }
     }
 
 }

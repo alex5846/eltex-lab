@@ -10,7 +10,9 @@ public class Smartphone extends Electronics {
     public void create() {
         super.create();
         RandValue randValue = new RandValue();
-        this.typeOfSim = randValue.getRandomTypeOfShell();
+        this.typeOfSim = randValue.getRandomTypeOfSim();
+        this.amountOfSim = randValue.getRandomAmountOfSim();
+
     }
 
 }
