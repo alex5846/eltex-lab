@@ -36,8 +36,17 @@ public class Main {
                 phones[i] = new Phone();
                 phones[i].create();
             }
+            System.out.println();
         }
-
+        if (choice == 2) {
+            System.out.println("Введите желаемое количество товара: ");
+            int count = scanner.nextInt();
+            Smartphone[] smartphone = new Smartphone[count];
+            for (int i = 0; i < count; i++) {
+                smartphone[i] = new Smartphone();
+                smartphone[i].create();
+            }
+        }
     }
 
 }

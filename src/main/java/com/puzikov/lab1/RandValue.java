@@ -9,8 +9,16 @@ public class RandValue {
     private final String[] MODEL = {"2020 года", "2007 года", "2022 года"};
     private final String[] OS = {"Android", "IOS"};
     private final String[] TYPE_OF_SHELL = {"классический", "раскладушка"};
+    private final String[] TYPE_OF_SIM = {"mini-sim","micro-sim","nano-sim"};
+    private final String[] AMOUNT_OF_SIM = {"1 sim", "2 sim"};
 
     Random random = new Random();
+    public String getRandomTypeOfSim(){
+        return TYPE_OF_SIM[random.nextInt(TYPE_OF_SIM.length)];
+    }
+public String getRandomAmountOfSim(){
+        return AMOUNT_OF_SIM[random.nextInt(AMOUNT_OF_SIM.length)];
+}
 
     public String getRandomTypeOfShell() {
         return TYPE_OF_SHELL[random.nextInt(TYPE_OF_SHELL.length)];
