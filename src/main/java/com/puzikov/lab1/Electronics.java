@@ -27,9 +27,10 @@ abstract public class Electronics implements ICrudAction {
         this.os = randValue.getRandomOS();
 
     }                                                              // заполнение объекта случайными значениями и инкремент счётчика
-
     public void read() {
-
+        System.out.println("Наименование товара "+name+";\n его характеристики:\n"+"Цена - "+price+
+                "Фирма - "+firm+";\n Модель - "+model+";\n Операционная система - "+
+                os+";\n Идентификатор товара - "+id+"\n");
     }                                                               // вывод данных на экран
 
     public void update() {

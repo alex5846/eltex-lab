@@ -35,6 +35,7 @@ public class Main {
             for (int i = 0; i < count; i++) {
                 phones[i] = new Phone();
                 phones[i].create();
+                phones[i].read();
             }
             System.out.println();
         }
@@ -45,6 +46,7 @@ public class Main {
             for (int i = 0; i < count; i++) {
                 smartphone[i] = new Smartphone();
                 smartphone[i].create();
+                smartphone[i].read();
             }
         }
         if (choice == 3){
@@ -54,8 +56,10 @@ public class Main {
             for (int i = 0;i<count;i++){
                 tablet[i] = new Tablet();
                 tablet[i].create();
+                tablet[i].read();
             }
         }
+
     }
 
 }
