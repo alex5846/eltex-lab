@@ -13,12 +13,11 @@ abstract public class Electronics implements ICrudAction {
     protected String model; // модель
     protected String os; // операционная система
 
-    public static int counterObject; // Считчик сколько было заказано товаров
+    public static int counterObject; // Счетчик сколько было заказано товаров
 
-    public void create() {
+      public void create() {
         Random random = new Random();
         RandValue randValue = new RandValue();
-
         this.id = UUID.randomUUID();
         this.name = randValue.getRandomNamePhone();
         this.price = random.nextInt(1000);

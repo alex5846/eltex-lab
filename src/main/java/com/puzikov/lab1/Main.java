@@ -37,7 +37,7 @@ public class Main {
                 phones[i].create();
                 phones[i].read();
             }
-            System.out.println();
+            System.out.println("Количество товара: " + Phone.counterObject);
         }
         if (choice == 2) {
             System.out.println("Введите желаемое количество товара: ");
@@ -48,16 +48,18 @@ public class Main {
                 smartphone[i].create();
                 smartphone[i].read();
             }
+            System.out.println("Количество товара: "+Smartphone.counterObject);
         }
-        if (choice == 3){
+        if (choice == 3) {
             System.out.println("Введите желаемое количество товара");
             int count = scanner.nextInt();
             Tablet[] tablet = new Tablet[count];
-            for (int i = 0;i<count;i++){
+            for (int i = 0; i < count; i++) {
                 tablet[i] = new Tablet();
                 tablet[i].create();
                 tablet[i].read();
             }
+            System.out.println("Количество товара: "+Tablet.counterObject);
         }
 
     }
