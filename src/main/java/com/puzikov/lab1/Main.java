@@ -31,6 +31,7 @@ public class Main {
         if (choice == 1) {
             System.out.println("Введите желаемое кол-во товара: ");
             int count = scanner.nextInt();
+            if (count >= 0){
             Phone[] phones = new Phone[count];
             for (int i = 0; i < count; i++) {
                 phones[i] = new Phone();
@@ -38,10 +39,11 @@ public class Main {
                 phones[i].read();
             }
             System.out.println("Количество товара: " + Phone.counterObject);
-        }
+        }}
         if (choice == 2) {
             System.out.println("Введите желаемое количество товара: ");
             int count = scanner.nextInt();
+            if (count >= 0){
             Smartphone[] smartphone = new Smartphone[count];
             for (int i = 0; i < count; i++) {
                 smartphone[i] = new Smartphone();
@@ -49,18 +51,19 @@ public class Main {
                 smartphone[i].read();
             }
             System.out.println("Количество товара: "+Smartphone.counterObject);
-        }
+        }}
         if (choice == 3) {
             System.out.println("Введите желаемое количество товара");
             int count = scanner.nextInt();
-            Tablet[] tablet = new Tablet[count];
-            for (int i = 0; i < count; i++) {
-                tablet[i] = new Tablet();
-                tablet[i].create();
-                tablet[i].read();
-            }
-            System.out.println("Количество товара: "+Tablet.counterObject);
-        }
+            if (count >= 0) {
+                Tablet[] tablet = new Tablet[count];
+                for (int i = 0; i < count; i++) {
+                    tablet[i] = new Tablet();
+                    tablet[i].create();
+                    tablet[i].read();
+                }
+                System.out.println("Количество товара: " + Tablet.counterObject);
+            }}
 
     }
 
