@@ -10,7 +10,7 @@ public class RandValue {
     private final String[] OS = {"Android", "IOS"};
     private final String[] TYPE_OF_SHELL = {"классический", "раскладушка"};
     private final String[] TYPE_OF_SIM = {"mini-sim", "micro-sim", "nano-sim"}; // тип симкарт
-    private final String[] AMOUNT_OF_SIM = {"1 sim", "2 sim"};  // колчиество симкарт
+    private final String[] AMOUNT_OF_SIM = {"1 sim", "2 sim"};  // количество симкарт
     private final String[] SCREEN_RESOLUTION = {"5 дюймов", "7 дюймов", "10 дюймов"}; //диагональ
     private final String[] VIDEO_PROCESSOR = {"дискретный видеопроцессор", "встроенный видеопроцессор", "гибридный видеопроцессор"};
 

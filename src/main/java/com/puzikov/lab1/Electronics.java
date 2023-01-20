@@ -16,6 +16,7 @@ abstract public class Electronics implements ICrudAction {
 
     public static int counterObject; // Счетчик сколько было заказано товаров
 
+    // заполнение объекта случайными значениями и инкремент счётчика
     public void create() {
         Random random = new Random();
         RandValue randValue = new RandValue();
@@ -25,9 +26,9 @@ abstract public class Electronics implements ICrudAction {
         this.firm = randValue.getRandomFirm();
         this.model = randValue.getRandomModel();
         this.os = randValue.getRandomOS();
+    }
 
-    }                                                              // заполнение объекта случайными значениями и инкремент счётчика
-
+    // вывод данных на экран
     public void read() {
         System.out.println("Наименование товара - " + name + ";\n " +
                 "его характеристики:\n" +
@@ -36,8 +37,9 @@ abstract public class Electronics implements ICrudAction {
                 "Модель - " + model + ";\n " +
                 "Операционная система - " + os + ";\n " +
                 "Идентификатор товара - " + id + ";\n");
-    }                                                               // вывод данных на экран
+    }
 
+    // ввод данных с клавиатуры (обновление данных)
     public void update() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите цену товара: ");
@@ -50,8 +52,9 @@ abstract public class Electronics implements ICrudAction {
         this.model = scanner.nextLine();
         System.out.println("Введите операционную систему: ");
         this.os = scanner.nextLine();
-    }                                                                // ввод данных с клавиатуры
+    }
 
+    // принудительное зануление данных в объекте и декремент счетчика
     public void delete() {
         this.price = 0;
         this.name = "";
@@ -59,7 +62,7 @@ abstract public class Electronics implements ICrudAction {
         this.model = "";
         this.os = "";
         counterObject--;
-    }                                                                // принудительное зануление данных в объекте и декремент счетчика
+    }
 
 }
 
