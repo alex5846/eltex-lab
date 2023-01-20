@@ -2,6 +2,7 @@ package com.puzikov.lab1;
 
 
 import java.util.Random;
+import java.util.Scanner;
 import java.util.UUID;
 
 abstract public class Electronics implements ICrudAction {
@@ -15,7 +16,7 @@ abstract public class Electronics implements ICrudAction {
 
     public static int counterObject; // Счетчик сколько было заказано товаров
 
-      public void create() {
+    public void create() {
         Random random = new Random();
         RandValue randValue = new RandValue();
         this.id = UUID.randomUUID();
@@ -26,18 +27,38 @@ abstract public class Electronics implements ICrudAction {
         this.os = randValue.getRandomOS();
 
     }                                                              // заполнение объекта случайными значениями и инкремент счётчика
+
     public void read() {
-        System.out.println("Наименование товара "+name+";\n его характеристики:\n"+"Цена - "+price+
-                "Фирма - "+firm+";\n Модель - "+model+";\n Операционная система - "+
-                os+";\n Идентификатор товара - "+id+"\n");
+        System.out.println("Наименование товара - " + name + ";\n " +
+                "его характеристики:\n" +
+                "Цена - " + price + ";\n" +
+                "Фирма - " + firm + ";\n " +
+                "Модель - " + model + ";\n " +
+                "Операционная система - " + os + ";\n " +
+                "Идентификатор товара - " + id + ";\n");
     }                                                               // вывод данных на экран
 
     public void update() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите цену товара: ");
+        this.price = scanner.nextInt();
+        System.out.println("Введите имя товара: ");
+        this.name = scanner.nextLine();
+        System.out.println("Введите фирму: ");
+        this.firm = scanner.nextLine();
+        System.out.println("Введите модель: ");
+        this.model = scanner.nextLine();
+        System.out.println("Введите операционную систему: ");
+        this.os = scanner.nextLine();
     }                                                                // ввод данных с клавиатуры
 
     public void delete() {
-
+        this.price = 0;
+        this.name = "";
+        this.firm = "";
+        this.model = "";
+        this.os = "";
+        counterObject--;
     }                                                                // принудительное зануление данных в объекте и декремент счетчика
 
 }

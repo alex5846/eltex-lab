@@ -31,27 +31,29 @@ public class Main {
         if (choice == 1) {
             System.out.println("Введите желаемое кол-во товара: ");
             int count = scanner.nextInt();
-            if (count >= 0){
-            Phone[] phones = new Phone[count];
-            for (int i = 0; i < count; i++) {
-                phones[i] = new Phone();
-                phones[i].create();
-                phones[i].read();
+            if (count >= 0) {
+                Phone[] phones = new Phone[count];
+                for (int i = 0; i < count; i++) {
+                    phones[i] = new Phone();
+                    phones[i].create();
+                    phones[i].read();
+                }
+                System.out.println("Количество товара: " + Phone.counterObject);
             }
-            System.out.println("Количество товара: " + Phone.counterObject);
-        }}
+        }
         if (choice == 2) {
             System.out.println("Введите желаемое количество товара: ");
             int count = scanner.nextInt();
-            if (count >= 0){
-            Smartphone[] smartphone = new Smartphone[count];
-            for (int i = 0; i < count; i++) {
-                smartphone[i] = new Smartphone();
-                smartphone[i].create();
-                smartphone[i].read();
+            if (count >= 0) {
+                Smartphone[] smartphone = new Smartphone[count];
+                for (int i = 0; i < count; i++) {
+                    smartphone[i] = new Smartphone();
+                    smartphone[i].create();
+                    smartphone[i].read();
+                }
+                System.out.println("Количество товара: " + Smartphone.counterObject);
             }
-            System.out.println("Количество товара: "+Smartphone.counterObject);
-        }}
+        }
         if (choice == 3) {
             System.out.println("Введите желаемое количество товара");
             int count = scanner.nextInt();
@@ -63,7 +65,8 @@ public class Main {
                     tablet[i].read();
                 }
                 System.out.println("Количество товара: " + Tablet.counterObject);
-            }}
+            }
+        }
 
     }
 
