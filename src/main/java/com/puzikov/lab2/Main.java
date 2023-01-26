@@ -21,9 +21,10 @@ import java.util.Scanner;
 // Из других мест по ходу исправления можешь сдалять мои записи
 
 public class Main {
+
     public static void main(String[] args) {
 
-
+        //  System.out.println(Credentials.);
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nМеню:\n1.Телефон\n2.Смартфон\n3.Планшет\n");
         int choice = scanner.nextInt();
@@ -64,11 +65,25 @@ public class Main {
                     tablet[i].create();
                     tablet[i].read();
                 }
+
+
                 System.out.println("Количество товара: " + Tablet.counterObject);
+
             }
         }
-
+        System.out.println("Желаете ли вы оформить заказ?\n 1. Да\2. Нет");
+        int count = scanner.nextInt();
+        if (count == 1) {
+            System.out.println("Для оформления заказа неообходимо заполнить поля: \n Введите свою фамилию");
+            String surnameUser = scanner.nextLine();
+            System.out.println("Введите свое имя");
+            String nameUser = scanner.nextLine();
+            System.out.println("Введите свое отчество");
+            String patronymicUser = scanner.nextLine();
+            System.out.println("Введите свой email");
+            String email = scanner.nextLine();
+            Credentials credentials = new Credentials(surnameUser, nameUser, patronymicUser, email);
+            credentials.add    // Добавление объекта в корзину
+        }
     }
-
 }
-
