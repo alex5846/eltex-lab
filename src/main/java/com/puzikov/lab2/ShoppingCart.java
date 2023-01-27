@@ -5,13 +5,19 @@ import java.util.UUID;
 
 // корзина
 public class ShoppingCart {
-    private List cart;
+    private List cart;  //сколлекция для храннения объектов в классе корзина
     private UUID id;
-    private ShoppingCart(){
+    public ShoppingCart(){
         this.cart  = new LinkedList();
         this.id = UUID.randomUUID();
-
     }
-    Credentials ghjgf = new Credentials("isdhgf", "sigf", "sadkfj", "sdf");
+
+    public void addInCart(Electronics electronics){
+        cart.add(electronics);
+    }
+
+    public void delete(Electronics electronics){
+        cart.remove(electronics);
+    }
 
 }
