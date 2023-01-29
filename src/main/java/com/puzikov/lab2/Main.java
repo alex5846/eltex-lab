@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        Credentials user = new Credentials("Иванов", "Иван", "Иванович", "ivanov@mail.ru");
         System.out.println("\nМеню:\n1.Телефон\n2.Смартфон\n3.Планшет\n");
         int choice = scanner.nextInt();
         ShoppingCart cart = new ShoppingCart();
@@ -28,8 +29,7 @@ public class Main {
                 }
                 System.out.println("Количество товара: " + Phone.counterObject);
             }
-        }
-        if (choice == 2) {
+        } else if (choice == 2) {
             System.out.println("Введите желаемое количество товара: ");
             int count = scanner.nextInt();
             if (count >= 0) {
@@ -42,8 +42,7 @@ public class Main {
                 }
                 System.out.println("Количество товара: " + Smartphone.counterObject);
             }
-        }
-        if (choice == 3) {
+        } else if (choice == 3) {
             System.out.println("Введите желаемое количество товара");
             int count = scanner.nextInt();
             if (count >= 0) {
@@ -54,31 +53,17 @@ public class Main {
                     tablet[i].read();
                     cart.addInCart(tablet[i]);
                 }
-
-
                 System.out.println("Количество товара: " + Tablet.counterObject);
-
             }
         }
-        System.out.println("Желаете ли вы оформить заказ?\n 1. Да \n 2. Нет");
-        int count = scanner.nextInt();
-        if (count == 1) {
-            System.out.println("Для оформления заказа неообходима регистрация: \n Введите свою фамилию");
-            String surnameUser = scanner.nextLine();
-            System.out.println("Введите свое имя");
-            String nameUser = scanner.nextLine();
-            System.out.println("Введите свое отчество");
-            String patronymicUser = scanner.nextLine();
-            System.out.println("Введите свой email");
-            String email = scanner.nextLine();
-            Credentials user = new Credentials(surnameUser, nameUser, patronymicUser, email);
-            System.out.println("Введите 1 для завершения регистрации");
-            int completion = scanner.nextInt();
-            if (completion == 1) {
-                Order order = new Order(user, cart);
-
-            }
+        System.out.println("1. Оформить заказ\n 2. Отмена");
+        int choice2 = scanner.nextInt();
+        if (choice2 == 1) {
+            Order order = new Order(user, cart);
         }
+
+
     }
+
 }
 
