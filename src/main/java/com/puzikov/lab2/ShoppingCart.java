@@ -20,4 +20,11 @@ public class ShoppingCart {
         cart.remove(electronics);
     }
 
+    @Override
+    public String toString() {
+        return "ShoppingCart{" +
+                "cart=" + cart +
+                ", id=" + id +
+                '}';
+    }
 }

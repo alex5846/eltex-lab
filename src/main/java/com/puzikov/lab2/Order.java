@@ -11,9 +11,25 @@ public class Order {
     private Credentials user;
     private ShoppingCart cart;
 
-    public Order(Credentials user, ShoppingCart cart){
+    public Order(Credentials user, ShoppingCart cart) {
         this.cart = cart;
         this.user = user;
+        this.id = UUID.randomUUID();
+        this.createTime = new Date(System.currentTimeMillis());
     }
 
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "createTime=" + createTime +
+                ", waitingTime=" + waitingTime +
+                ", id=" + id +
+                ", user=" + user +
+                ", cart=" + cart +
+                '}';
+    }
 }

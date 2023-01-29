@@ -13,4 +13,17 @@ public class Phone extends Electronics {
         RandValue randValue = new RandValue();
         this.typeOfShell = randValue.getRandomTypeOfShell();
     }
+
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "typeOfShell='" + typeOfShell + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", firm='" + firm + '\'' +
+                ", model='" + model + '\'' +
+                ", os='" + os + '\'' +
+                '}';
+    }
 }

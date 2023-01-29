@@ -19,7 +19,15 @@ public class Credentials {
         this.id = UUID.randomUUID();
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Credentials{" +
+                "id=" + id +
+                ", surnameUser='" + surnameUser + '\'' +
+                ", nameUser='" + nameUser + '\'' +
+                ", patronymicUser='" + patronymicUser + '\'' +
+                ", emailUser='" + emailUser + '\'' +
+                '}';
     }
+}
 
