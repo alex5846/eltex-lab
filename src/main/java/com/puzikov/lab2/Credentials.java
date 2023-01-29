@@ -20,12 +20,6 @@ public class Credentials {
     }
 
 
-  //  public void method() {
-  //      List<String> list = new ArrayList<>();
-   //     list.add(surnameUser);
-   //     list.add(nameUser);
-  //      list.add(patronymicUser);
-   //     list.add(emailUser);
-   //     System.out.println(list);
+
     }
 

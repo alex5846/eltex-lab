@@ -2,32 +2,18 @@ package com.puzikov.lab2;
 
 import java.util.Scanner;
 
-//todo общие замечания:
-// 1) переделать структуру меню (зачем ты заставляешь кого-то покупать планшет, если ему его не надо?)
-// хочу видеть такую
-//      Меню:
-//      1.Телефон
-//      2.Смартфон
-//      3.Планшет
-// после выбора чего-то запрашивается кол-во товара
-// 2) перерабоать логку меню
-// 3) вынести логику меню в main класс
-// 4) переименовать методы интерфеса
-// 5) слеать класс Electronics абстрактным и вынести в него общие поля
-// 6) в абстрактном классе Electronics реализовать CRUD операции. В наследниках при необходимости дополнять логику (ты же можешь вызывать в наследниках родительские методы)
-// 7) для простоты реализуй пока только и два метода - create и read
 
-//todo этот список замечаний не удаляй. Потом пробежисмя и посмотрим что исправил, а что нет.
-// Из других мест по ходу исправления можешь сдалять мои записи
+// 6) в абстрактном классе Electronics реализовать CRUD операции. В наследниках при необходимости дополнять логику (ты же можешь вызывать в наследниках родительские методы)
 
 public class Main {
 
     public static void main(String[] args) {
 
-        //  System.out.println(Credentials.);
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nМеню:\n1.Телефон\n2.Смартфон\n3.Планшет\n");
         int choice = scanner.nextInt();
+        ShoppingCart cart = new ShoppingCart();
+
 
         if (choice == 1) {
             System.out.println("Введите желаемое кол-во товара: ");
@@ -38,6 +24,7 @@ public class Main {
                     phones[i] = new Phone();
                     phones[i].create();
                     phones[i].read();
+                    cart.addInCart(phones[i]);
                 }
                 System.out.println("Количество товара: " + Phone.counterObject);
             }
@@ -51,6 +38,7 @@ public class Main {
                     smartphone[i] = new Smartphone();
                     smartphone[i].create();
                     smartphone[i].read();
+                    cart.addInCart(smartphone[i]);
                 }
                 System.out.println("Количество товара: " + Smartphone.counterObject);
             }
@@ -64,6 +52,7 @@ public class Main {
                     tablet[i] = new Tablet();
                     tablet[i].create();
                     tablet[i].read();
+                    cart.addInCart(tablet[i]);
                 }
 
 
@@ -71,10 +60,10 @@ public class Main {
 
             }
         }
-        System.out.println("Желаете ли вы оформить заказ?\n 1. Да\2. Нет");
+        System.out.println("Желаете ли вы оформить заказ?\n 1. Да \n 2. Нет");
         int count = scanner.nextInt();
         if (count == 1) {
-            System.out.println("Для оформления заказа неообходимо заполнить поля: \n Введите свою фамилию");
+            System.out.println("Для оформления заказа неообходима регистрация: \n Введите свою фамилию");
             String surnameUser = scanner.nextLine();
             System.out.println("Введите свое имя");
             String nameUser = scanner.nextLine();
@@ -82,8 +71,14 @@ public class Main {
             String patronymicUser = scanner.nextLine();
             System.out.println("Введите свой email");
             String email = scanner.nextLine();
-            Credentials credentials = new Credentials(surnameUser, nameUser, patronymicUser, email);
-            credentials.add    // Добавление объекта в корзину
+            Credentials user = new Credentials(surnameUser, nameUser, patronymicUser, email);
+            System.out.println("Введите 1 для завершения регистрации");
+            int completion = scanner.nextInt();
+            if (completion == 1) {
+                Order order = new Order(user, cart);
+
+            }
         }
     }
 }
+
