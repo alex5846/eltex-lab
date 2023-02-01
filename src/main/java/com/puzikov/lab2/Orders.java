@@ -19,5 +19,18 @@ public class Orders {
         this.orders = orders;
         this.dateOrder = createTime;
     }
+
+    public void offer(Order order){
+        orders.add(order);
+        dateOrder.put(order.getCreateTime(), order);
+    }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "orders=" + orders +
+                ", dateOrder=" + dateOrder +
+                '}';
+    }
 }
 

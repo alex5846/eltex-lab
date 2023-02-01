@@ -14,8 +14,6 @@ public class Main {
         System.out.println("\nМеню:\n1.Телефон\n2.Смартфон\n3.Планшет\n");
         int choice = scanner.nextInt();
         ShoppingCart cart = new ShoppingCart();
-        List ordersOrders = new ArrayList();
-        Map createTimesOrders = new HashMap();
 
 
         if (choice == 1) {
@@ -62,12 +60,9 @@ public class Main {
         int choice2 = scanner.nextInt();
         if (choice2 == 1) {
             Order order = new Order(user, cart);
-            Date createTimes = new Date(System.currentTimeMillis());                   // Время создания заказа и его записи в коллекцию
-            createTimesOrders.put(1, createTimes);
-            Orders orders = new Orders(ordersOrders, createTimesOrders);
-
+            Orders orders = new Orders();
+            orders.offer(order);
         }
-
 
     }
 
