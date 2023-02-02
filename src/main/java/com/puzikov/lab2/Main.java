@@ -59,9 +59,8 @@ public class Main {
         System.out.println("1. Оформить заказ\n 2. Отмена");
         int choice2 = scanner.nextInt();
         if (choice2 == 1) {
-            Order order = new Order(user, cart);
             Orders orders = new Orders();
-            orders.offer(order);
+            orders.offer2(cart, user);
         }
 
     }
