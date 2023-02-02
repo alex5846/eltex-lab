@@ -6,7 +6,7 @@ import java.util.UUID;
 // Заказ
 public class Order {
     private Date createTime;         // время заказа
-    private long waitingTime;        // время ожидания
+    private long waitingTime = 2000;        // время ожидания
     private UUID id;
     private Credentials user;
     private ShoppingCart cart;
@@ -21,6 +21,7 @@ public class Order {
     public Date getCreateTime() {
         return createTime;
     }
+    public  long getWaitingTime(){return  waitingTime;}
 
     @Override
     public String toString() {

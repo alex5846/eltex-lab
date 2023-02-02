@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Scanner scanner = new Scanner(System.in);
         Credentials user = new Credentials("Иванов", "Иван", "Иванович", "ivanov@mail.ru");
@@ -61,6 +61,8 @@ public class Main {
         if (choice2 == 1) {
             Orders orders = new Orders();
             orders.offer2(cart, user);
+
+
         }
 
     }

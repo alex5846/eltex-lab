@@ -34,10 +34,16 @@ public class Orders {
         // в orders создать метод offer2 на входе shoppingCart и данные пользователя (user),
         // внутри метода создается заказ он добавляется в коллекцуию заказов и коллекцию времени заказов
     }
-    public void offer2(ShoppingCart cart, Credentials user){
+    public void offer2(ShoppingCart cart, Credentials user) throws InterruptedException {
         Order order = new Order(user, cart);
         orders.add(order);
         dateOrder.put(order.getCreateTime(), order);
+        Thread.sleep(order.getWaitingTime());
         }
+    public void deleteOrder(Order order){                       //Не понятно, откуда должен исчезнуть заказ после его обработки(после истечения времени ожидания)
+        orders.remove(order);
+    }
+
+
 }
 
