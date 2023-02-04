@@ -15,11 +15,13 @@ public class RandValue {
     private final String[] VIDEO_PROCESSOR = {"дискретный видеопроцессор", "встроенный видеопроцессор", "гибридный видеопроцессор"};
 
     Random random = new Random();
-    public String getScreenResolution(){
+
+    public String getScreenResolution() {
         return SCREEN_RESOLUTION[random.nextInt(SCREEN_RESOLUTION.length)];
 
     }
-    public String getVideoProcessor(){
+
+    public String getVideoProcessor() {
 
         return VIDEO_PROCESSOR[random.nextInt(VIDEO_PROCESSOR.length)];
     }

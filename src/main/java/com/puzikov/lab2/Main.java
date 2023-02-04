@@ -3,8 +3,8 @@ package com.puzikov.lab2;
 import java.util.*;
 
 
-// 6) в абстрактном классе Electronics реализовать CRUD операции. В наследниках при необходимости дополнять логику (ты же можешь вызывать в наследниках родительские методы)
-
+// todo ты кое-что упустил: 6. Добавить для класса «заказ» поле «статус заказа» (в ожидании, обработан).
+// подсказка - это должен быть enum
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {

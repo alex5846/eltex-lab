@@ -21,7 +21,10 @@ public class Order {
     public Date getCreateTime() {
         return createTime;
     }
-    public  long getWaitingTime(){return  waitingTime;}
+
+    public long getWaitingTime() {
+        return waitingTime;
+    }
 
     @Override
     public String toString() {

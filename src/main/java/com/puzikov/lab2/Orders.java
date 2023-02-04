@@ -1,4 +1,5 @@
 package com.puzikov.lab2;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +21,7 @@ public class Orders {
         this.dateOrder = createTime;
     }
 
-    public void offer(Order order){
+    public void offer(Order order) {
         orders.add(order);
         dateOrder.put(order.getCreateTime(), order);
     }
@@ -34,13 +35,15 @@ public class Orders {
         // в orders создать метод offer2 на входе shoppingCart и данные пользователя (user),
         // внутри метода создается заказ он добавляется в коллекцуию заказов и коллекцию времени заказов
     }
+
     public void offer2(ShoppingCart cart, Credentials user) throws InterruptedException {
         Order order = new Order(user, cart);
         orders.add(order);
         dateOrder.put(order.getCreateTime(), order);
         Thread.sleep(order.getWaitingTime());
-        }
-    public void deleteOrder(Order order){                       //Не понятно, откуда должен исчезнуть заказ после его обработки(после истечения времени ожидания)
+    }
+
+    public void deleteOrder(Order order) {                       //Не понятно, откуда должен исчезнуть заказ после его обработки(после истечения времени ожидания)
         orders.remove(order);
     }
 

@@ -3,10 +3,12 @@ package com.puzikov.lab2;
 
 public class Phone extends Electronics {
     private String typeOfShell; //тип корпуса
-    public Phone(){
+
+    public Phone() {
         super();
         counterObject++;
     }
+
     @Override
     public void create() {
         super.create();

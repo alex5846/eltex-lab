@@ -1,4 +1,5 @@
 package com.puzikov.lab2;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
@@ -7,16 +8,17 @@ import java.util.UUID;
 public class ShoppingCart {
     private List cart;  //сколлекция для храннения объектов в классе корзина
     private UUID id;
-    public ShoppingCart(){
-        this.cart  = new LinkedList();
+
+    public ShoppingCart() {
+        this.cart = new LinkedList();
         this.id = UUID.randomUUID();
     }
 
-    public void addInCart(Electronics electronics){
+    public void addInCart(Electronics electronics) {
         cart.add(electronics);
     }
 
-    public void delete(Electronics electronics){
+    public void delete(Electronics electronics) {
         cart.remove(electronics);
     }
 
