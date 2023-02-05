@@ -60,7 +60,7 @@ public class Main {
         int choice2 = scanner.nextInt();
         if (choice2 == 1) {
             Orders orders = new Orders();
-            orders.offer2(cart, user);
+            orders.offer(cart, user);
 
 
         }

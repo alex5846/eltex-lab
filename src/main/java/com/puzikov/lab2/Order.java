@@ -5,17 +5,27 @@ import java.util.UUID;
 
 // Заказ
 public class Order {
-    private Date createTime;         // время заказа
+    private Date createTime;         // время создания
     private long waitingTime = 2000;        // время ожидания
     private UUID id;
     private Credentials user;
     private ShoppingCart cart;
+    private StatusOrder status;
 
     public Order(Credentials user, ShoppingCart cart) {
         this.cart = cart;
         this.user = user;
         this.id = UUID.randomUUID();
         this.createTime = new Date(System.currentTimeMillis());
+        this.status = StatusOrder.WAITING;
+    }
+
+    public boolean checkInterval(long time) {
+        if (time > (createTime.getTime() + waitingTime)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Date getCreateTime() {
@@ -24,6 +34,14 @@ public class Order {
 
     public long getWaitingTime() {
         return waitingTime;
+    }
+
+    public void setStatus(StatusOrder status){
+        this.status = status;
+    }
+
+    public StatusOrder getStatus() {
+        return status;
     }
 
     @Override

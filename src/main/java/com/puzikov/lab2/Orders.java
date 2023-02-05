@@ -8,11 +8,11 @@ import java.util.TreeMap;
 // Заказы. Объединение списков заказов
 public class Orders {
 
-    private List orders;                                            // Коллекция для хранения объектов в классе Orders (Хранит в себе Order)
+    private List<Order> orders;                                            // Коллекция для хранения объектов в классе Orders (Хранит в себе Order)
     private Map dateOrder;                                          // Коллекция для хранения объектов по времени создания
 
     public Orders() {
-        this.orders = new ArrayList();
+        this.orders = new ArrayList<>();
         this.dateOrder = new TreeMap();
     }
 
@@ -21,10 +21,6 @@ public class Orders {
         this.dateOrder = createTime;
     }
 
-    public void offer(Order order) {
-        orders.add(order);
-        dateOrder.put(order.getCreateTime(), order);
-    }
 
     @Override
     public String toString() {
@@ -36,16 +32,28 @@ public class Orders {
         // внутри метода создается заказ он добавляется в коллекцуию заказов и коллекцию времени заказов
     }
 
-    public void offer2(ShoppingCart cart, Credentials user) throws InterruptedException {
+    public void offer(ShoppingCart cart, Credentials user) throws InterruptedException {
         Order order = new Order(user, cart);
         orders.add(order);
         dateOrder.put(order.getCreateTime(), order);
-        Thread.sleep(order.getWaitingTime());
     }
 
-    public void deleteOrder(Order order) {                       //Не понятно, откуда должен исчезнуть заказ после его обработки(после истечения времени ожидания)
-        orders.remove(order);
+    public void checkTime() {
+        for (int i = 0; i < orders.size(); i++) {
+            Order order = orders.get(i);
+            if (order.getStatus() == StatusOrder.WAITING && order.checkInterval(System.currentTimeMillis())) {
+                order.setStatus(StatusOrder.DONE);
+                System.out.println("проверка заказа...");
+            }
+
+        }
     }
+
+//    public void deleteOrder(ShoppingCart cart, Credentials user) {                       //Не понятно, откуда должен исчезнуть заказ после его обработки(после истечения времени ожидания)
+//        orders.remove(user);
+//        dateOrder.remove(order.getCreateTime(), order);
+    //           Thread.sleep(order.getWaitingTime());
+//    }
 
 
 }
