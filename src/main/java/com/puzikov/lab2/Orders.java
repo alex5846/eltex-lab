@@ -8,8 +8,8 @@ import java.util.TreeMap;
 // Заказы. Объединение списков заказов
 public class Orders {
 
-    private List<Order> orders;                                            // Коллекция для хранения объектов в классе Orders (Хранит в себе Order)
-    private Map dateOrder;                                          // Коллекция для хранения объектов по времени создания
+    private List<Order> orders;               // Коллекция для хранения объектов в классе Orders (Хранит в себе Order)
+    private Map dateOrder;                                  // Коллекция для хранения объектов по времени создания
 
     public Orders() {
         this.orders = new ArrayList<>();
@@ -49,7 +49,8 @@ public class Orders {
         }
     }
 
-//    public void deleteOrder(ShoppingCart cart, Credentials user) {                       //Не понятно, откуда должен исчезнуть заказ после его обработки(после истечения времени ожидания)
+//    public void deleteOrder(ShoppingCart cart, Credentials user) {
+// Не понятно, откуда должен исчезнуть заказ после его обработки(после истечения времени ожидания)
 //        orders.remove(user);
 //        dateOrder.remove(order.getCreateTime(), order);
     //           Thread.sleep(order.getWaitingTime());

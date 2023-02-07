@@ -13,9 +13,9 @@ public class MainTest {
         tablet.create();
         Credentials user = new Credentials("Chigyrov", "Mihail", "Evgenevich", "miha123@mail.ru");
         ShoppingCart cart = new ShoppingCart();
-        cart.addInCart(smartphone);
-        cart.addInCart(phone);
-        cart.addInCart(tablet);
+        cart.add(smartphone);
+        cart.add(phone);
+        cart.add(tablet);
 
         Order order = new Order(user, cart);
         Map<Integer, Date> createTime = new HashMap<>();

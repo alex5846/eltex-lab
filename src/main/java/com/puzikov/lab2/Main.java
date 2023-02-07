@@ -4,7 +4,6 @@ import java.util.*;
 
 
 // todo ты кое-что упустил: 6. Добавить для класса «заказ» поле «статус заказа» (в ожидании, обработан).
-// подсказка - это должен быть enum
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
@@ -25,7 +24,7 @@ public class Main {
                     phones[i] = new Phone();
                     phones[i].create();
                     phones[i].read();
-                    cart.addInCart(phones[i]);
+                    cart.add(phones[i]);
                 }
                 System.out.println("Количество товара: " + Phone.counterObject);
             }
@@ -38,7 +37,7 @@ public class Main {
                     smartphone[i] = new Smartphone();
                     smartphone[i].create();
                     smartphone[i].read();
-                    cart.addInCart(smartphone[i]);
+                    cart.add(smartphone[i]);
                 }
                 System.out.println("Количество товара: " + Smartphone.counterObject);
             }
@@ -51,7 +50,7 @@ public class Main {
                     tablet[i] = new Tablet();
                     tablet[i].create();
                     tablet[i].read();
-                    cart.addInCart(tablet[i]);
+                    cart.add(tablet[i]);
                 }
                 System.out.println("Количество товара: " + Tablet.counterObject);
             }

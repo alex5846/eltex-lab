@@ -64,5 +64,8 @@ abstract public class Electronics implements ICrudAction {
         counterObject--;
     }
 
+    public UUID getId() {
+        return id;
+    }
 }
 
