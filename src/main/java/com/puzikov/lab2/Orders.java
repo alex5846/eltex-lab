@@ -38,6 +38,10 @@ public class Orders {
         dateOrder.put(order.getCreateTime(), order);
     }
 
+    public void showOrder(){
+        System.out.println("Заказы: "+orders);
+    }
+
     public void checkTime() {
         for (int i = 0; i < orders.size(); i++) {
             Order order = orders.get(i);

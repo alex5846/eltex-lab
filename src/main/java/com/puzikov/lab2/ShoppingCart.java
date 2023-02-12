@@ -26,6 +26,10 @@ public class ShoppingCart {
         cart.remove(electronics);
     }
 
+    public void showCart(){
+        System.out.println("Элементы в корзине: "+cart);
+    }
+
     @Override
     public String toString() {
         return "ShoppingCart{" +
