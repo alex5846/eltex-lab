@@ -13,13 +13,13 @@ public class Main {
         System.out.println("\nМеню:\n1.Телефон\n2.Смартфон\n3.Планшет\n");
         int choice = scanner.nextInt();
         ShoppingCart cart = new ShoppingCart();
-
+        Phone[] phones = null;
 
         if (choice == 1) {
             System.out.println("Введите желаемое кол-во товара: ");
             int count = scanner.nextInt();
             if (count >= 0) {
-                Phone[] phones = new Phone[count];
+                phones = new Phone[count];
                 for (int i = 0; i < count; i++) {
                     phones[i] = new Phone();
                     phones[i].create();
@@ -60,8 +60,9 @@ public class Main {
         if (choice2 == 1) {
             Orders orders = new Orders();
             orders.offer(cart, user);
-
-
+            if (Objects.nonNull(phones)) {
+                cart.isExistUUID(phones[0].getId());
+            }
         }
 
     }

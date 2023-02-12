@@ -44,6 +44,10 @@ public class Order {
         return status;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Order{" +

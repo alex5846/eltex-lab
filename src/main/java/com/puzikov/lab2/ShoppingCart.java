@@ -18,6 +18,9 @@ public class ShoppingCart {
         cart.add(electronics);
         uuids.add(electronics.getId());
     }
+    public boolean isExistUUID(UUID id){
+        return uuids.contains(id);
+    }
 
     public void delete(Electronics electronics) {
         cart.remove(electronics);
