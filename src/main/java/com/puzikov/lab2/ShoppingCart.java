@@ -18,7 +18,7 @@ public class ShoppingCart {
         cart.add(electronics);
         uuids.add(electronics.getId());
     }
-    public boolean isExistUUID(UUID id){
+    public boolean isExistUUID(UUID id){    // Проверяет наличие id в корзине
         return uuids.contains(id);
     }
 

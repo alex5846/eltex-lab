@@ -14,6 +14,8 @@ public class Main {
         int choice = scanner.nextInt();
         ShoppingCart cart = new ShoppingCart();
         Phone[] phones = null;
+        //   Tablet[] tablets = null;
+        // Smartphone[] smartphones = null;
 
         if (choice == 1) {
             System.out.println("Введите желаемое кол-во товара: ");
@@ -26,7 +28,7 @@ public class Main {
                     phones[i].read();
                     cart.add(phones[i]);
                 }
-                System.out.println("Количество товара: " + Phone.counterObject);
+                // System.out.println("Количество товара: " + Phone.counterObject);
             }
         } else if (choice == 2) {
             System.out.println("Введите желаемое количество товара: ");
@@ -39,7 +41,7 @@ public class Main {
                     smartphone[i].read();
                     cart.add(smartphone[i]);
                 }
-                System.out.println("Количество товара: " + Smartphone.counterObject);
+                //   System.out.println("Количество товара: " + Smartphone.counterObject);
             }
         } else if (choice == 3) {
             System.out.println("Введите желаемое количество товара");
@@ -52,16 +54,17 @@ public class Main {
                     tablet[i].read();
                     cart.add(tablet[i]);
                 }
-                System.out.println("Количество товара: " + Tablet.counterObject);
+                //  System.out.println("Количество товара: " + Tablet.counterObject);
             }
         }
-        System.out.println("1. Оформить заказ\n 2. Отмена");
+        System.out.println("1. Оформить заказ\n2. Отмена");
         int choice2 = scanner.nextInt();
         if (choice2 == 1) {
             Orders orders = new Orders();
-            orders.offer(cart, user);
+            orders.offer(cart, user);           // Добавляет заказ в Заказы
             if (Objects.nonNull(phones)) {
-                cart.isExistUUID(phones[0].getId());
+                cart.isExistUUID(phones[0].getId());        // Проверяет наличие id в корзине
+
             }
         }
 
