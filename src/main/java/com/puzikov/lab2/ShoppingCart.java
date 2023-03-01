@@ -4,7 +4,7 @@ import java.util.*;
 
 // корзина
 public class ShoppingCart {
-    private List cart;  //коллекция для храннения объектов в классе корзина
+    private List<Electronics> cart;  //коллекция для храннения объектов в классе корзина
     private UUID id;
     private Set uuids;
 
@@ -28,6 +28,13 @@ public class ShoppingCart {
 
     public void showCart(){
         System.out.println("Элементы в корзине: "+cart);
+    }
+
+    public void checkPurchase(){                        //Метод, выводящий на экран содержание всех товаров, находящихся в карзине
+        cart.size();
+        for (int i=0;i<cart.size(); i++){
+            cart.get(i).read();
+        }
     }
 
     @Override

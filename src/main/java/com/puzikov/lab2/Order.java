@@ -21,7 +21,7 @@ public class Order {
     }
 
     public boolean checkInterval(long time) {
-        if (time > (createTime.getTime() + waitingTime)) {
+        if (time < (createTime.getTime() + waitingTime)) {
             return true;
         } else {
             return false;

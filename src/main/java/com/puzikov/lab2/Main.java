@@ -25,7 +25,7 @@ public class Main {
                 for (int i = 0; i < count; i++) {
                     phones[i] = new Phone();
                     phones[i].create();
-                    phones[i].read();
+                    //phones[i].read();
                     cart.add(phones[i]);
                 }
                 // System.out.println("Количество товара: " + Phone.counterObject);
@@ -38,10 +38,10 @@ public class Main {
                 for (int i = 0; i < count; i++) {
                     smartphone[i] = new Smartphone();
                     smartphone[i].create();
-                    smartphone[i].read();
+                    //smartphone[i].read();
                     cart.add(smartphone[i]);
                 }
-                //   System.out.println("Количество товара: " + Smartphone.counterObject);
+                System.out.println("Количество товара: " + Smartphone.counterObject);
             }
         } else if (choice == 3) {
             System.out.println("Введите желаемое количество товара");
@@ -66,6 +66,10 @@ public class Main {
                 cart.isExistUUID(phones[0].getId());        // Проверяет наличие id в корзине
 
             }
+            orders.checkTime();
+            System.out.println("Статус заказа: "+orders.getOrders().get(0).getStatus());
+            System.out.println("Вы купили товары со следующими характеристиками: ");
+            cart.checkPurchase();
         }
 
     }

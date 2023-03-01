@@ -53,13 +53,10 @@ public class Orders {
         }
     }
 
-//    public void deleteOrder(ShoppingCart cart, Credentials user) {
-// Не понятно, откуда должен исчезнуть заказ после его обработки(после истечения времени ожидания)
-//        orders.remove(user);
-//        dateOrder.remove(order.getCreateTime(), order);
-    //           Thread.sleep(order.getWaitingTime());
-//    }
 
+    public List<Order> getOrders(){
+        return orders;
+    }
 
 }
 

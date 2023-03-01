@@ -30,7 +30,7 @@ abstract public class Electronics implements ICrudAction {
 
     // вывод данных на экран
     public void read() {
-        System.out.println("Наименование товара - " + name + ";\n" +
+        System.out.println("\nНаименование товара - " + name + ";\n" +
                 "его характеристики:\n"+
                 "Цена - " + price + ";\n"+
                 "Фирма - " + firm + ";\n"+
