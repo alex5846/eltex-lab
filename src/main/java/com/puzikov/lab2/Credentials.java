@@ -19,6 +19,16 @@ public class Credentials {
         this.id = UUID.randomUUID();
     }
 
+    public void show() {
+        System.out.println("Покупатель: ");
+        System.out.println("Id: " + id);
+        System.out.println("Фамилия: " + surnameUser);
+        System.out.println("Имя: " + nameUser);
+        System.out.println("Отчество: " + patronymicUser);
+        System.out.println("Email: " + emailUser);
+    }
+
+
     @Override
     public String toString() {
         return "Credentials{" +

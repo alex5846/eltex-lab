@@ -28,6 +28,15 @@ public class Order {
         }
     }
 
+    public void show() {
+        System.out.println("Ваш заказ:");
+        System.out.println("Время создания заказа: " + createTime);
+        System.out.println("Время ожидания заказа: " + waitingTime);
+        cart.show();
+        user.show();
+        System.out.println("Статус заказа: " + status);
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -36,7 +45,7 @@ public class Order {
         return waitingTime;
     }
 
-    public void setStatus(StatusOrder status){
+    public void setStatus(StatusOrder status) {
         this.status = status;
     }
 

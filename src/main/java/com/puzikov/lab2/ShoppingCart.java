@@ -18,7 +18,8 @@ public class ShoppingCart {
         cart.add(electronics);
         uuids.add(electronics.getId());
     }
-    public boolean isExistUUID(UUID id){    // Проверяет наличие id в корзине
+
+    public boolean isExistUUID(UUID id) {    // Проверяет наличие id в корзине
         return uuids.contains(id);
     }
 
@@ -26,14 +27,10 @@ public class ShoppingCart {
         cart.remove(electronics);
     }
 
-    public void showCart(){
-        System.out.println("Элементы в корзине: "+cart);
-    }
 
-    public void checkPurchase(){                        //Метод, выводящий на экран содержание всех товаров, находящихся в карзине
-        cart.size();
-        for (int i=0;i<cart.size(); i++){
-            cart.get(i).read();
+    public void show() {                        //Метод, выводящий на экран содержание всех товаров, находящихся в карзине
+        for (Electronics electronics : cart) {
+            electronics.read();
         }
     }
 
