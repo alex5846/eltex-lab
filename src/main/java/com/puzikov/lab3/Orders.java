@@ -1,22 +1,19 @@
 package com.puzikov.lab3;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 // Заказы. Объединение списков заказов
-public class Orders {
+public class Orders<T extends Order> {
 
-    private List<Order> orders;               // Коллекция для хранения объектов в классе Orders (Хранит в себе Order)
-    private Map dateOrder;                                  // Коллекция для хранения объектов по времени создания
+    private List<T> orders;               // Коллекция для хранения объектов в классе Orders (Хранит в себе Order)
+    private Map<Date, T> dateOrder;                                  // Коллекция для хранения объектов по времени создания
 
     public Orders() {
         this.orders = new ArrayList<>();
-        this.dateOrder = new TreeMap();
+        this.dateOrder = new TreeMap<>();
     }
 
-    public Orders(List orders, Map createTime) {
+    public Orders(List<T> orders, Map<Date, T> createTime) {
         this.orders = orders;
         this.dateOrder = createTime;
     }
@@ -34,12 +31,12 @@ public class Orders {
 
     public void offer(ShoppingCart cart, Credentials user) throws InterruptedException {
         Order order = new Order(user, cart);
-        orders.add(order);
-        dateOrder.put(order.getCreateTime(), order);
+        orders.add((T) order);
+        dateOrder.put(order.getCreateTime(),(T) order);
     }
 
     public void show() {
-        for (Order order : orders) {
+        for (T order : orders) {
             order.show();
         }
     }
@@ -56,7 +53,7 @@ public class Orders {
     }
 
 
-    public List<Order> getOrders() {
+    public List<T> getOrders() {
         return orders;
     }
 
