@@ -2,7 +2,7 @@ package com.puzikov.lab3;
 
 import java.util.*;
 
-public class MainTest {
+public class MainTest1 {
     public static void main(String[] args) {
         // Создать объекты наследников, добавить их в корзину и вывести ORDER в консоль
         Phone phone = new Phone();
