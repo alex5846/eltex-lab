@@ -3,18 +3,18 @@ package com.puzikov.lab3;
 import java.util.*;
 
 // корзина
-public class ShoppingCart {
-    private List<Electronics> cart;  //коллекция для храннения объектов в классе корзина
+public class ShoppingCart<T extends Electronics> {
+    private List<T> cart;  //коллекция для храннения объектов в классе корзина
     private UUID id;
-    private Set uuids;
+    private Set<UUID> uuids;
 
     public ShoppingCart() {
-        this.cart = new LinkedList();
+        this.cart = new LinkedList<>();
         this.id = UUID.randomUUID();
         this.uuids = new HashSet<>();
     }
 
-    public void add(Electronics electronics) {
+    public void add(T electronics) {
         cart.add(electronics);
         uuids.add(electronics.getId());
     }
@@ -23,13 +23,13 @@ public class ShoppingCart {
         return uuids.contains(id);
     }
 
-    public void delete(Electronics electronics) {
+    public void delete(T electronics) {
         cart.remove(electronics);
     }
 
 
     public void show() {                        //Метод, выводящий на экран содержание всех товаров, находящихся в карзине
-        for (Electronics electronics : cart) {
+        for (T electronics : cart) {
             electronics.read();
         }
     }
