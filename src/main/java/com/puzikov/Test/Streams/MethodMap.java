@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class MethodMap {
     public static void main(String[] args) {
+        //Метод map принимает лямбда-выражения и преобразовывает stream одного типа данных в stream другого типа
         List<String>list = new ArrayList<>();
         list.add("Privet");
         list.add("Kak dela?");
